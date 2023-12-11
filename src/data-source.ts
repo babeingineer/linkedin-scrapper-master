@@ -8,6 +8,7 @@ import {
   DB_TYPE,
   DB_USERNAME,
 } from "./config";
+import { User } from "./entity/User";
 
 export const AppDataSouce = new DataSource({
   type: DB_TYPE as "postgres",
@@ -16,7 +17,7 @@ export const AppDataSouce = new DataSource({
   username: DB_USERNAME,
   password: DB_PASSWORD,
   database: DB_DATABASE,
-  entities: [Profile],
+  entities: [Profile, User],
   synchronize: true,
   logging: false,
 });
